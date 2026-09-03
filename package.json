@@ -1,0 +1,22 @@
+{
+  "name": "tk-editor-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "黎静蕾 · TK 海外剪辑师个人作品集",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "chrome-remote-interface": "^0.34.0",
+    "lenis": "^1.3.26",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.10"
+  }
+}

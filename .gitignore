@@ -1,0 +1,18 @@
+node_modules/
+dist/
+dist-empty/
+
+# 原始高清视频（371MB），仅本地保留，不上传仓库
+# 网站使用的是 public/videos/ 下的压缩版（55MB）
+public-source/
+
+# 本地调试脚本与截图产物（仅本地使用，不上传）
+.workbuddy/
+
+# vite 临时文件
+vite.config.js.timestamp-*.mjs
+
+.DS_Store
+*.log
+.env
+.env.local
