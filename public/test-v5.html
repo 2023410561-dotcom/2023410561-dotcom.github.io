@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>body{background:#000;color:#fff;font-family:monospace;padding:20px}video{max-width:100%;border:1px solid #333}.box{margin:20px 0;padding:12px;background:#111}</style>
+</head>
+<body>
+<h1>v5 test</h1>
+<div class="box">
+  <video id="v5" controls autoplay muted src="/videos/v5-shower-jp.mp4" style="width:400px"></video>
+  <div id="info5"></div>
+</div>
+<script>
+const v=document.getElementById('v5'), i=document.getElementById('info5');
+v.addEventListener('loadedmetadata',()=>i.innerHTML='<pre>loadedmeta: '+v.videoWidth+'x'+v.videoHeight+' dur='+v.duration+'</pre>');
+v.addEventListener('error',e=>i.innerHTML='<pre>ERROR code='+(v.error&&v.error.code)+' msg='+(v.error&&v.error.message)+'</pre>');
+setTimeout(()=>{i.innerHTML+='<pre>1s: '+v.videoWidth+'x'+v.videoHeight+' state='+v.readyState+' net='+v.networkState+' paused='+v.paused+' t='+v.currentTime.toFixed(2)+'</pre>'},1000);
+setTimeout(()=>{i.innerHTML+='<pre>3s: '+v.videoWidth+'x'+v.videoHeight+' paused='+v.paused+' t='+v.currentTime.toFixed(2)+'</pre>'},3000);
+</script>
+</body>
+</html>
