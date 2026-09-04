@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
+import { resolveVideo, videoPoster } from '../lib/media.js'
 
 /**
  * ProjectDetail — 点开项目卡片后的「纵向视频 Feed」弹窗
@@ -322,7 +323,8 @@ export default function ProjectDetail({ project, onClose }) {
                       if (el) attachVideoProgress(el, i)
                     }}
                     className="project-detail-video"
-                    src={video.src}
+                    src={resolveVideo(video.src)}
+                    poster={videoPoster(video.src)}
                     loop
                     muted={muted}
                     playsInline

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import ProjectDetail from './ProjectDetail.jsx'
+import { resolveVideo, videoPoster } from '../lib/media.js'
 
 // 作品分类板块
 // 4 大板块 × 各 3-4 个作品：每个板块以卡片形式呈现作品网格，点击作品可进入纵向 TikTok 风视频 Feed。
@@ -189,7 +190,8 @@ function WorkItem({ work, index, onOpen }) {
       <span className="category-work-thumb">
         <video
           ref={videoRef}
-          src={work.src}
+          src={resolveVideo(work.src)}
+          poster={videoPoster(work.src)}
           muted
           playsInline
           preload="metadata"
@@ -275,7 +277,8 @@ export default function Projects() {
                   {coverVideo && (
                     <video
                       className="project-cover-video-bg"
-                      src={coverVideo.src}
+                      src={resolveVideo(coverVideo.src)}
+                      poster={videoPoster(coverVideo.src)}
                       muted
                       playsInline
                       preload="metadata"
